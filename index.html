@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Facilon</title>
+<link rel="stylesheet" href="https://facilonlogin.blob.core.windows.net/auth/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://facilonlogin.blob.core.windows.net/auth/css/style.css">
+<link rel="stylesheet" href="https://facilonlogin.blob.core.windows.net/auth/css/responsive.css">
+<link rel="stylesheet" href="https://facilonlogin.blob.core.windows.net/auth/css/custom.css">
+<link rel="stylesheet" href="https://facilonlogin.blob.core.windows.net/auth/css/fullpage.css">
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+<script src="https://facilonlogin.blob.core.windows.net/auth/js/modernizer.js"></script>
+<style>
+
+
+#api input[type="text"], #api input[type="email"], #api input[type="password"] {
+    width: 57%;
+    padding: 8px;
+    margin: 2px 0;
+    border: 1px solid #232323;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+ 
+#api .heading h1 {
+    font-size: 17px;
+    display: none;
+}
+#api .heading h1 {
+  color: blue;
+  //text-align: center;
+}
+#api h2{
+	font-size: 20px !important;
+	margin: 0px !important;
+}
+/* Centered titles */
+#api .intro h2,
+#api .divider h2 {
+ // text-align: center;
+ color:#fff;
+}
+
+/* Form container */
+#api .entry {
+  width: 400px;
+  margin: 0 auto;
+}
+
+/* Label styles */
+#api .entry-item label {
+  font-weight: bold;
+}
+
+/* Input styles */
+#api input[type="text"],
+#api input[type="email"],
+#api input[type="password"] {
+    width: 59%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    line-height: 1.5;            /* Better vertical alignment */
+    vertical-align: middle;
+    font-size: 16px;
+    font-family: inherit;
+    background-color: white;
+    color: #333;
+}
+ 
+/* Prevent Chrome autofill background weirdness */
+input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px white inset;
+    -webkit-text-fill-color: #333;
+}
+ 
+/* Optional: make sure label stays above and doesn't interfere */
+.entry-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Password label styles */
+#api .password-label label {
+  font-weight: bold;
+}
+
+/* Sign in Button */
+#api input[type="submit"] {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  //text-align: center;
+  font-weight: bold; /* Add bold text */
+}
+
+/* Style the button on hover */
+#api input[type="submit"]:hover {
+  background-color: #005fbb;
+}
+
+/* Link styles (e.g., "Forgot your password?") */
+#api a {
+ color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-top: 14%;
+    margin-block-end: -86px;
+}
+
+/* Error messages or notifications */
+#api .error {
+  color: red;
+}
+
+/* Placeholder text */
+#api input::placeholder {
+  color: #999;
+}
+
+/* Focus styles for inputs (optional) */
+#api input:focus {
+  border: 1px solid #0078d4;
+  outline: none;
+}
+
+/* Create account link styles */
+#api #createAccount {
+  color: #0078d4;
+  text-decoration: underline; /* Underline the "Sign up now" link */
+}
+
+/* Divider styles */
+#api .divider {
+  //text-align: center;
+  //margin: 20px 0; /* Add some space below the divider */
+}
+
+/* Sign in title styles */
+#api .heading h1 {
+  font-size: 17px;
+}
+
+/* Additional styles can be added as needed */
+
+/* Be cautious with overriding default B2C styles to maintain consistency */
+
+/* Always test thoroughly to ensure your custom UI remains functional and visually appealing */
+
+.intro h2 {
+//  text-align: center;
+  margin: 15px;
+}
+
+
+.rounded-logo {
+  display: block; /* Make the image a block element to center it horizontally */
+  margin: 0 auto; /* Center the image horizontally */
+  border-radius: 50%; /* Make the image rounded (circle) */
+  width: 100px; /* Set the width of the image */
+  height: 100px; /* Set the height of the image */
+}
+
+/* Center the entire content */
+#api {
+//  text-align: center;
+}
+
+/* Style the social login section */
+.claims-provider-list-buttons.social {
+  margin-top: 20px;
+}
+
+/* Style the "OR" divider */
+.divider {
+  margin: 20px 0;
+}
+
+/* Style the "OR" text */
+.divider h2 {
+  color: #0078d4;
+  font-size: 20px !important;
+}
+
+/* Style the "Sign in with your social account" title */
+.claims-provider-list-buttons.social .intro h2 {
+  color: #0078d4;
+  font-size: 20px;
+}
+
+/* Style the social login buttons */
+.claims-provider-list-buttons.social button.accountButton {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 10px 5px;
+  font-weight: bold;
+  width: 200px;
+}
+
+/* Style the social login buttons on hover */
+.claims-provider-list-buttons.social button.accountButton:hover {
+  background-color: #005fbb;
+}
+
+/* Additional styles can be added as needed */
+
+/* Be cautious with overriding default B2C styles to maintain consistency */
+
+/* Always test thoroughly to ensure your custom UI remains functional and visually appealing */
+
+/* Style the "Forgot your password?" link and move it below the password label */
+#api .password-label {
+//  display: flex;
+ // flex-direction: column;
+//  align-items: flex-start; Adjust alignment as needed
+}
+#forgotPassword {
+  margin-top: 30px; /* Add some space above the link */
+  text-decoration: none; /* Remove the underline if needed */
+  color: #0078d4; /* Link color */
+}
+.company-logo{
+	height: 132px;
+    width: 167px;
+    margin-top: -15%;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background: #be1717;
+		margin-top:7%;
+    border: 1px;
+    color: white;
+}
+#api input:-webkit-autofill {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0 1000px #ffffff21 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    
+		-webkit-text-fill-color: #080808 !important;
+}
+
+
+
+</style>
+</head>
+
+<body>
+  <!--  <div id="preloader">
+      <div class="loader">
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__bar"></div>
+          <div class="loader__ball"></div>
+      </div>
+      </div> -->
+  <nav id="sidebar">
+    <div id="dismiss">
+      <i class="fa fa-close"></i>
+    </div>
+    <ul class="list-unstyled contact-details__info">
+      <li>
+        <div class="icon bg-theme-color2">
+          <span class="fa fa-phone"></span>
+        </div>
+        <div class="text">
+          <!-- <h6 class="mb-1"></h6> -->
+          <a href="tel:+918976917026">+91 8976917026</a>
+        </div>
+      </li>
+      <li>
+        <div class="icon">
+          <span class="fa fa-envelope"></span>
+        </div>
+        <div class="text">
+          <!-- <h6 class="mb-1">Email</h6> -->
+          <a href="mailto:facilon.services@facilonservices.com">facilon.services@facilonservices.com</a>
+        </div>
+      </li>
+      <li>
+        <div class="icon">
+          <span class="fa fa-location-arrow"></span>
+        </div>
+        <div class="text">
+          <!-- <h6 class="mb-1">Location</h6> -->
+          <span>Facilon Services Private Ltd.
+            A102, Golden Square CHS, Kalina,
+            Santacruz (E), Vidya Nagari,
+            Mumbai - 400098, India.</span>
+        </div>
+      </li>
+    </ul>
+    <ul class="list-unstyled CTAs">
+      <li>
+        <a href="contact-us.html" class="article">Get in touch</a>
+      </li>
+    </ul>
+  </nav>
+  <div id="wrapper">
+    <div class="overlay"></div>
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="top-left">
+
+              <ul class="list-style-one light">
+                <li><i class="fa fa-envelope"></i> <a href="mailto:facilon.services@facilonservices.com">facilon.services@facilonservices.com</a>
+                </li>
+              </ul>
+              <ul class="social-icon-one light">
+                <li><a href="https://www.facebook.com/facilonServices/"><i class="fa-brands fa-facebook"
+                  aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/facilonservices"><i class="fa-brands fa-instagram"
+                  aria-hidden="true"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/facilon-services/about/"><i
+                  class="fa-brands fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/facilonservices"><i class="fa-brands fa-x-twitter"
+                  aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!--<div class="top-right">-->
+            <!--  <ul class="feature-ilst">-->
+            <!--    <li><a href="#">Register</a></li>-->
+            <!--    <li><a href="#">Login</a></li>-->
+            <!--    <li><a href="#">Contact Us</a></li>-->
+            <!--  </ul>-->
+
+            <!--</div>-->
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <header class="header header_style_01">
+        <nav class="navbar navbar-default">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Menu</span>
+              </button>
+              <a class="navbar-brand" href="https://www.facilonservices.com/"><img src="https://facilonlogin.blob.core.windows.net/auth/images/logo.png" alt="image"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <!--   <li><a href="index.html">Home-->
+                <!--  </a>-->
+                <!--</li>-->
+                <!---<li><a href="our-team.html">Our Team
+                  </a>
+                </li>
+                <li><a href="our-expertise.html"> Our Expertise
+                  </a>
+                </li> --->
+                <!--<li class="dropdown">-->
+                <!--  <a class="dropdown-toggle" data-toggle="dropdown" href="#">About-->
+                <!--  <span class="fa fa fa-angle-down"></span></a>-->
+                <!--  <ul class="dropdown-menu">-->
+                <!--    <li><a href="our-team.html"><i class="fa fa-angle-right"></i> Our Team</a></li>-->
+                <!--    <li><a href="our-expertise.html"><i class="fa fa-angle-right"></i> Our Expertise</a></li>-->
+                <!--  </ul>-->
+                <!--</li>-->
+                <!--- <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Solutions 
+                  <span class="fa fa fa-angle-down"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="investor.html"><i class="fa fa-angle-right"></i> Investor</a></li>
+                    <li><a href="investment-advisor.html"><i class="fa fa-angle-right"></i> Investment Advisor</a></li>
+                    <li><a href="custodian.html"><i class="fa fa-angle-right"></i> Custodian</a></li>
+                    <li><a href="broker.html"><i class="fa fa-angle-right"></i> Broker</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Markets 
+                  <span class="fa fa fa-angle-down"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="#"><i class="fa fa-angle-right"></i> India</a></li>
+                     
+                     
+                  </ul>
+               </li>
+                <li><a href="{{route('contact_us_show')}}">Contact Us
+                  </a>
+                </li> -->
+                <!--- <li><a href="{{route('investor_register_main_step_show')}}">Signup/Signin 
+                </a>
+                </li> --->
+             
+              </ul>
+            </div>
+            <button type="button" id="sidebarCollapse" class="btn btn-info sidebar-btn">
+            <i class="fa fa-bars"></i>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="fullpage2">
+      <div id="section0" class="section service-provider2">
+        <div class="container21">
+          <!--<div class="section-heading mb-40">-->
+          <!--  <div class="sub-heading">Service Providers</div>-->
+          <!--</div>-->
+          <div class="row">
+            <div class="facilon-login-container">
+    <div class="left-section">
+      <div class="branding">
+        <!--<img src="images/logo.png" alt="Facilon Icon">-->
+        <h2>Welcome <br> To <br>Facilon Services</h2>
+        <!--<h2>Facilon Services</h2>-->
+        <!--<p></p>-->
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="login-form">
+        <div class="icon">
+          <i class="fas fa-users"></i>
+        </div>
+				
+
+        <div id="api">
+				
+				</div>
+
+
+				
+      </div>
+    </div>
+  </div>
+            
+         
+          </div>
+        </div>
+      </div>
+      </div>
+   </div>
+   
+   
+   
+   
+      <div class="section fp-auto-height" id="section2">
+              <footer>
+        <div class="footer-info">
+          <div class="container">
+            <div class="col-md-3">
+              <ul class="footer-links hov policy">
+                <li><a href="https://www.facilonservices.com/terms-of-use">Terms of use <span class="icon icon-arrow-right2"></span></a></li>
+                <li><a href="https://www.facilonservices.com/privacy-policy">Privacy Policy <span class="icon icon-arrow-right2"></span></a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <ul class="footer-links hov big-links">
+                <li><a href="https://www.facilonservices.com/our-team">Our Team <span class="icon icon-arrow-right2"></span></a></li>
+                <li><a href="https://www.facilonservices.com/our-expertise">Our Expertise <span class="icon icon-arrow-right2"></span></a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <ul class="footer-links hov big-links">
+                <li><a href="https://www.facilonservices.com/investor">Solutions<span class="icon icon-arrow-right2"></span></a></li>
+                <li><a href="https://www.facilonservices.com/contact-us">Contact Us<span class="icon icon-arrow-right2"></span></a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <ul class="footer-links hov mumbai-text">
+                <li><a href="#">Follow Us <span class="icon icon-arrow-right2"></span></a></li>
+              </ul>
+              <div class="social-box">
+                <ul>
+                  <li><a href="https://www.facebook.com/facilonServices/"><i class="fa-brands fa-square-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="https://www.instagram.com/facilonservices"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/facilon-services/about/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a></li>
+                  <li><a href="https://twitter.com/facilonservices"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+                  <ul>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <div class="container text-center">
+            <div class="row">
+              <p>© Copyright 2026 Facilon | Designed By <a href="https://www.matrixbricks.com/"
+                target="_blank">Matrix Bricks.</a> All Rights Reserved
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      </div>
+<!--  </div>-->
+<!--</div>-->
+  <!--<div class="flotter-wharf">-->
+  <!--  <a href="#" class="wharf"><b>Get Started</b></a>-->
+  <!--</div>-->
+  <!--Cookies-->
+
+  <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+  <script src="https://facilonlogin.blob.core.windows.net/auth/js/all.js"></script>
+  <script src="https://facilonlogin.blob.core.windows.net/auth/js/jquery.nivo.slider.js"></script>
+  <script src="https://facilonlogin.blob.core.windows.net/auth/js/jquery.appear.js"></script>
+  <script src="https://facilonlogin.blob.core.windows.net/auth/js/isotope.pkgd.min.js"></script>
+  <script src="https://facilonlogin.blob.core.windows.net/auth/js/custom.js"></script>
+  <script src="https://facilonlogin.blob.core.windows.net/auth/js/fullpage.js"></script>
+  <script src="https://facilonlogin.blob.core.windows.net/auth/js/portfolio.js"></script>
+
+  <script src="https://facilonlogin.blob.core.windows.net/auth/js/hoverdir.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    
+
+		<script type="text/javascript">
+      var myFullpage = new fullpage('#fullpage', {
+        anchors: ['Services-Provider','Copyrights'],
+        navigation: false,
+        navigationPosition: 'right',
+        scrollBar: true,
+        scrollingSpeed: 1250,
+        verticalCentered: false,
+  
+        responsiveWidth: 1100,
+        responsiveSlides: true,
+        afterResponsive: function (isResponsive) {
+          scrollOverflow: true
+  
+        }
+  
+      });
+  
+    </script>
+
+
+
+
+</body>
+
+</html>
