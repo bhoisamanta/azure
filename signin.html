@@ -197,6 +197,35 @@ button, input, select, textarea {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: #080808 !important;
 }
+
+/* Signup redirect (outside #api) — robust against B2C/Bootstrap overrides */
+.signup-redirect {
+    text-align: center !important;
+    margin: 16px 0 4px !important;
+    display: block !important;
+}
+.signup-redirect p {
+    font-size: 0.95rem !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    display: block !important;
+}
+.signup-redirect a,
+.signup-redirect a:link,
+.signup-redirect a:visited {
+    color: #FFD27A !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+    display: inline !important;
+    margin: 0 0 0 4px !important;
+    padding: 2px 4px !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+.signup-redirect a:hover {
+    color: #FFE5A8 !important;
+    text-decoration: underline !important;
+}
 </style>
 </head>
 
@@ -296,13 +325,10 @@ button, input, select, textarea {
                     <i class="fas fa-users"></i>
                   </div>
                   <div id="api"></div>
-                  <div class="signup-redirect" style="text-align:center; margin: 12px 0 4px;">
-                    <p style="font-size:0.92rem; color:#fff; margin:0;">
+                  <div class="signup-redirect">
+                    <p>
                       Don't have an account?
-                      <a href="http://localhost:4200/investor/register"
-                        style="color:#9ed1ff; font-weight:600; text-decoration:none;">
-                        Sign up with Facilon
-                      </a>
+                      <a href="http://localhost:4200/investor/register" target="_top">Sign up with Facilon</a>
                     </p>
                   </div>
                 </div>
