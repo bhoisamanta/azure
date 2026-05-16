@@ -38,8 +38,15 @@
 }
 
 #api .entry {
-  width: 400px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
+}
+#api .entry-item {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 #api .entry-item label {
@@ -190,10 +197,36 @@ input:-webkit-autofill {
     margin-left: 0 !important;
 }
 
-/* Hide B2C-injected "OR" divider and duplicate "Don't have an account?" section */
+/* Hide B2C-injected "OR" divider and duplicate "Don't have an account?" section.
+   B2C may use various class names so we match aggressively. */
 #api .divider,
 #api .create,
-#api .createAccount {
+#api .createAccount,
+#api .create-account,
+#api [class*="divider"],
+#api [class*="create"],
+#api [class*="social"],
+#api [class*="options"],
+#api .claims-provider-list-buttons,
+#api .accountButton {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Belt-and-braces: hide all <h2>, <p>, and <div> siblings that come AFTER the form/entry inside #api */
+#api form ~ div,
+#api form ~ p,
+#api form ~ h2,
+#api .entry ~ div,
+#api .entry ~ p,
+#api .entry ~ h2,
+#api .buttons ~ div,
+#api .buttons ~ p,
+#api .buttons ~ h2 {
     display: none !important;
 }
 
