@@ -180,16 +180,31 @@ input:-webkit-autofill {
     margin-top: -15%;
 }
 
-button, input, select, textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    background: #be1717;
-		margin-top:7%;
-    border: 1px;
-    color: white;
-		margin-left: 35px;
-		margin-top: 18px;
+/* Style the B2C-injected primary "Sign in" submit button only */
+#api input[type="submit"],
+#api button[type="submit"] {
+    background: #be1717 !important;
+    color: #fff !important;
+    border: none !important;
+    margin-top: 18px !important;
+    margin-left: 0 !important;
+}
+
+/* Hide B2C-injected "OR" divider and duplicate "Don't have an account?" section */
+#api .divider,
+#api .create,
+#api .createAccount {
+    display: none !important;
+}
+
+/* Ensure inputs stay inside the card (reset any inherited margin-left/top) */
+#api input[type="text"],
+#api input[type="email"],
+#api input[type="password"] {
+    margin-left: 0 !important;
+    margin-top: 5px !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
 }
 #api input:-webkit-autofill {
     background-color: transparent !important;
