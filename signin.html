@@ -485,6 +485,45 @@ input:-webkit-autofill {
   </div>
 
   <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+  <script>
+  // Hide the B2C-injected Cancel button only on the password-reset journey.
+  // B2C uses signin.html as the template for B2C_1_PASSWORDRESET too, so a
+  // global CSS rule would affect other flows. We mark the document instead
+  // and scope the hide rule to that marker.
+  (function () {
+    try {
+      var policy = (window.SETTINGS && window.SETTINGS.hosts && window.SETTINGS.hosts.policy) || '';
+      if (/PASSWORDRESET/i.test(policy)) {
+        document.documentElement.setAttribute('data-b2c-policy', 'passwordreset');
+      }
+    } catch (e) {}
+  })();
+  </script>
+  <style>
+  /* Cancel-button hide, scoped to the password-reset journey only. */
+  html[data-b2c-policy="passwordreset"] #api #cancel,
+  html[data-b2c-policy="passwordreset"] #api button#cancel,
+  html[data-b2c-policy="passwordreset"] #api input#cancel,
+  html[data-b2c-policy="passwordreset"] #api .cancelButton,
+  html[data-b2c-policy="passwordreset"] #api button.cancelClaims,
+  html[data-b2c-policy="passwordreset"] #api button[id*="cancel" i],
+  html[data-b2c-policy="passwordreset"] #api input[id*="cancel" i],
+  html[data-b2c-policy="passwordreset"] #api button[class*="cancel" i],
+  html[data-b2c-policy="passwordreset"] #api input[class*="cancel" i],
+  html[data-b2c-policy="passwordreset"] #api button[name*="cancel" i],
+  html[data-b2c-policy="passwordreset"] #api input[name*="cancel" i] {
+      display: none !important;
+      visibility: hidden !important;
+      width: 0 !important;
+      height: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+  }
+  </style>
 </body>
 
 </html>
